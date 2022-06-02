@@ -2,11 +2,11 @@ const express = require('express');
 
 const router = express.Router();
 
-const logger =require('../.logger')
+const logger = require('../logger/logger')
 
-const helper = require('../util')
+const myhelper = require('../util/helper')
 
-const formatter = require('../validator')
+const formatter = require('../validator/formatter')
 
 router.get('/test-me1', function (req, res) {
    logger.welcome()
@@ -14,16 +14,17 @@ router.get('/test-me1', function (req, res) {
 });
 
 router.get('/test-me2', function (req, res) {
-    helper.printDate()
-    helper.printMonth()
-    helper.getBatchinfo()
+   myhelper.printDate()
+   myhelper.printMonth()
+   myhelper.getBatchInfo()
      res.send('My 2nd ever api!')
  });
 
  router.get('/test-me3', function (req, res) {
     formatter.trim()
-    formatter.changetoLowerCase()
-    formatter.changeToUpperCase()
+    formatter.lowercase()
+    formatter.upperCase()
+    
      res.send('My 3rd ever api!')
  });
 module.exports = router;

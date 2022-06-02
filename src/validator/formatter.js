@@ -5,17 +5,18 @@
 // toUpperCase() on a hardcoded string]
 // Call all these functions in route.js inside the test-me route handler
 
+let hey = "   My name is Chinmaya Sahoo       "
 const trim = function(){
-    console.log("I am declaring the trim() function.")
+    console.log(hey.trim())
+}
+const lowerCase= function(){
+    console.log(hey.toLowerCase())
+}
 
+const upperCase = function(){
+    console.log(hey.toUpperCase())
 }
-const changetoLowerCase = function(){
-    console.log("THIS FUNCTION CHANGE THESE TEXT TO LOWERCASE.")
-}
-const changeToUpperCase = function(){
-    console.log("this function change these text to uppercase.")
-    }
-   
-    module.exports.trim = trim
-    module.exports.CLC = changetoLowerCase
-    module.exports.CUC = changeToUpperCase
+
+module.exports.trim=trim
+module.exports.lowercase=lowerCase
+module.exports.upperCase=upperCase
