@@ -10,6 +10,7 @@ const formatter = require('../validator/formatter')
 
 const lodash = require('../lodash/lodash')
 
+
 router.get('/test-me1', function (req, res) {
    logger.welcome()
     res.send('My first ever api!')
@@ -30,8 +31,10 @@ router.get('/test-me2', function (req, res) {
      res.send('My 3rd ever api!')
  });
  router.get('/hello', function (req, res) {
-   lodash.chunk()
-   lodash.tail()
+ lodash.chunk()
+ lodash.tail()
+lodash.union()
+lodash.fromPairs()
      res.send('My 4th ever api!')
  });
 module.exports = router;
