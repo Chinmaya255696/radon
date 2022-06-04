@@ -1,7 +1,7 @@
-const express = require('express');
+
 const myHelper = require('../util/helper')
 const underscore = require('underscore')
-
+const express = require('express');
 const router = express.Router();
 
 router.get('/test-me', function (req, res) {
@@ -35,7 +35,62 @@ router.get('/candidates/:canidatesName', function(req, res){
     console.log('Candidates name is '+req.params.canidatesName)
     res.send('Done')
 })
+router.get('/movies',function(req, res){
+let movies = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
+res.send(movies)
+})
+router.get('/movies/:indexNumber',function(req, res){
+    let movies = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
+    let moviesindex = req.params.indexNumber
+    let finalMovies = "";
+    if (moviesindex < movies.length) {
+    finalMovies =("Movies does not exist" + movies.length)
+        res.send(finalMovies)
+    }
+})
+router.get('/films', function(req, res){
+    let arr = [ {
+        'id': 1,
+        'name': 'The Shining'
+       }, {
+        "id": 2,
+        'name':' Incendies'
+       }, {
+        'id': 3,
+        'name': 'Rang de Basanti'
+       }, {
+        'id': 4,
+       'name': 'Finding Nemo'
+       }]
+       res.send(arr)
+       
+});
+router.get('/films/:filmId', function(req, res){
+    let arr = [ {
+        'id': 1,
+        'name': 'The Shining'
+       }, {
+        "id": 2,
+        'name':' Incendies'
+       }, {
+        'id': 3,
+        'name': 'Rang de Basanti'
+       }, {
+        'id': 4,
+       'name': 'Finding Nemo'
+       }]
+       filmindex= req.params.filmId
+       function idLoolookup(x){
+           return x.Id;
+       }
+       letgetId= arr.map(idLoolookup)
+        let finalFilm="";
+        if(filmindex <= getId.length){
+            finalFilm = arr[filmindex-1]
 
-
+        }else{
+    finalFilm=("Please enter number equal to or below:="+ getId.length+"Because no movies exist with the entered id")
+        }
+})
 module.exports = router;
 // adding this comment for no reason
