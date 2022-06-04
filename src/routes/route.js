@@ -2,6 +2,7 @@
 const myHelper = require('../util/helper')
 const underscore = require('underscore')
 const express = require('express');
+const { noConflict } = require('underscore');
 const router = express.Router();
 
 router.get('/test-me', function (req, res) {
@@ -35,10 +36,12 @@ router.get('/candidates/:canidatesName', function(req, res){
     console.log('Candidates name is '+req.params.canidatesName)
     res.send('Done')
 })
+//no.1
 router.get('/movies',function(req, res){
 let movies = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
 res.send(movies)
 })
+//no.2+no.3
 router.get('/movies/:indexNumber',function(req, res){
     let movies = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
     let moviesindex = req.params.indexNumber
@@ -48,6 +51,7 @@ router.get('/movies/:indexNumber',function(req, res){
         res.send(finalMovies)
     }
 })
+//no.4
 router.get('/films', function(req, res){
     let arr = [ {
         'id': 1,
@@ -65,6 +69,7 @@ router.get('/films', function(req, res){
        res.send(arr)
        
 });
+//no.5
 router.get('/films/:filmId', function(req, res){
     let arr = [ {
         'id': 1,
