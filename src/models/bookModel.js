@@ -9,12 +9,12 @@ const bookSchema = new mongoose.Schema( {
         europePrice: String,
     },
     year:{
-        type : String,
-       default : 2021
+        type: Number,
+       default :2021
     },
     tags: [String],
     authorName: String, 
-     totalPages:Number,
+     totalPages: Number,
     stockAvailable:Boolean,
    }, { timestamps: true });
   
