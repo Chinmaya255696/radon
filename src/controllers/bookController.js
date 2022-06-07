@@ -1,7 +1,7 @@
 
 const BookModel= require("../models/bookModel")
 const AuthorModel= require("../models/authorModel")
-const authorModel = require("../models/authorModel")
+
 
 const creatAuthor= async function(req, res){
 
