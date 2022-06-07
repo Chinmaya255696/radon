@@ -19,7 +19,7 @@ router.get("/test-me", function (req, res) {
 
    router.get("/AutheroftheBook", BookController.AutheroftheBook)
 
-   router.get("getInrBook", BookController.InrOfBooks)
+   router.get("/getInrBook", BookController.InrOfBooks)
 
  
 
