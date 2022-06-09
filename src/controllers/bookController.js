@@ -49,9 +49,24 @@ let InrOfBooks = async function(req, res){
         res.send({Author: aut}); 
     });
 }
+
 module.exports.InrOfBooks = InrOfBooks
+// Optional
 
+let booksByAuthorId = async function(req, res){
 
+}
+let oldAuthor = async function(req,res){
+
+let bookRating= await BookModel.find({ratings : { $gt: 4 }}).select({author_id : 1});
+
+let data = await AuthorModel.find({author_id : bookRating.author_id},{age :{ $gt: 50}}).select("author_name");
+let a = data;
+console.log(a);
+    res.send({msg : data});
+    
+} 
+module.exports.oldAuthor = oldAuthor
 
 // const { count } = require("console")
 // const BookModel= require("../models/bookModel")

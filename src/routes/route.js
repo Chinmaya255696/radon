@@ -21,8 +21,9 @@ router.get("/test-me", function (req, res) {
 
    router.get("/getInrBook", BookController.InrOfBooks)
 
+//    router.get("/books-by-authorid", BookController.books-by-authorid)
  
-
+router.get("/oldAuthor", BookController.oldAuthor)
 
  module.exports = router;
 
