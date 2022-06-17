@@ -9,7 +9,8 @@
 - layman's definition: It is something in JS that tells us whether an operation has completed or not (pending)
 - technical definition: it is a JS object that represents whether an asynchronous operation(like db or axios call) is completed or not
 
-
+<!-- What is Axios?
+Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (= it can run in the browser and nodejs with the same codebase). On the server-side it uses the native node.js http module, while on the client (browser) it uses XMLHttpRequests. -->
 
 
 
