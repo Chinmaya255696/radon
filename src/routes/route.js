@@ -17,6 +17,7 @@ router.delete("/blogs/:blogId", blogController.deleteById)
 
 router.delete("/blogs", blogController.deleteBlogsByQuery)
 
+router.post("/login",authorController.loginAuthor)
 
 
 
