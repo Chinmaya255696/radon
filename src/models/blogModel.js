@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.Types.ObjectId
+const validator = require("validator")
+const mixedType = mongoose.Schema.Types.Mixed
 
 
 const blogSchema = new mongoose.Schema({
@@ -20,21 +22,42 @@ const blogSchema = new mongoose.Schema({
         type: [String],
     },
     category: {
-        type: [String],
+        type: String,
         required: true,
-        enum: ["technology", "entertainment", "lifestyle", "food", "fashion"]
     },
     subcategory: {
         type: [String]
     },
+    // createdAt: {
+    //     type: String,
+    //     default: null
+    // },
+    // updatedAt: {
+    //     type: String,
+    //     default: null
+    // },
+    deletedAt: {
+        type: String,
+        default: null
+    },
     isDeleted: {
         type: Boolean,
-        default: false
+        default: false,
+        // validate(value) {
+        //     if (!validator.isBoolean(value)) {
+        //         throw new Error("Invalid Response");
+        //     }
+        // }
+    },
+    publishedAt: {
+        type: String,
+        default: null
     },
     isPublished: {
         type: Boolean,
         default: false
     }
+
 
 }, { timestamps: true });
 
